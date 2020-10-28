@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "react-native-hook-redux-template",
+    "slug": "react-native-hook-redux-template",
+    "privacy": "public",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.finestudio.template",
+      "infoPlist": {
+        "NSCameraUsageDescription": "XXX想要访问相机，为了上传头像照片",
+        "NSMicrophoneUsageDescription": "XXX想要访问麦克风，为了上传头像照片",
+        "NSPhotoLibraryAddUsageDescription": "XXX想要访问相册，为了上传头像照片",
+        "NSPhotoLibraryUsageDescription": "XXX想要访问相册，为了上传头像照片"
+      }
+    },
+    "description": "",
+    "android": {
+      "package": "com.finestudio.template",
+      "versionCode": 1
+    }
+  }
+}
