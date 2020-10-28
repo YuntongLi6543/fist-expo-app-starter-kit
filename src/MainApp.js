@@ -1,10 +1,6 @@
-import React, { useState, useEffect, useMemo, createContext } from 'react';
+import React, { useState, useEffect } from 'react';
 
-//react-native components
-import { StyleSheet, Text } from 'react-native';
-
-//icons
-import { Feather } from '@expo/vector-icons';
+import { StyleSheet, Text, TextInput } from 'react-native';
 
 //react navigation
 import { useSafeArea } from 'react-native-safe-area-context';
@@ -16,9 +12,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AsyncStorage from '@react-native-community/async-storage';
 import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
+import { Feather } from '@expo/vector-icons';
 
 //components
-import LottieLoading from './components/LottieLoading';
+import LoadingLottie from './components/LoadingLottie';
 
 //screens
 import Home from './screens/home/Home';
@@ -27,18 +24,21 @@ import User from './screens/user/User';
 
 import StackExample from './screens/home/Stack';
 
-//stylesheet
+//styles
 import { Colors } from './styles';
 
-//disable text setting of system
+//disable text and textinput of the user system setting 
 Text.defaultProps = Text.defaultProps || {};
 Text.defaultProps.allowFontScaling = false;
+
+TextInput.defaultProps = TextInput.defaultProps || {};
+TextInput.defaultProps.allowFontScaling = false;
 
 //define stack and tabs 
 const Stack = createStackNavigator();
 const BottomTabs = createBottomTabNavigator();
 
-function MainApp() {
+export default function MainApp() {
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
@@ -186,10 +186,8 @@ function MainApp() {
 		);
 	};
 
-	console.disableYellowBox = true;
-
 	if (loading === true) {
-		return <LottieLoading />
+		return <LoadingLottie />
 	}
 
 	return (
@@ -198,9 +196,6 @@ function MainApp() {
 		</NavigationContainer>
 	);
 }
-
-
-export default MainApp;
 
 const styles = StyleSheet.create({
 
