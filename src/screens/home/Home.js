@@ -13,14 +13,14 @@ import i18n from 'i18n-js';
 
 import { languageData } from '../../i18n/i18n';
 import LoadingSpinner from '../../components/LoadingSpinner';
-import LottieLoading from '../../components/LottieLoading';
+import LoadingLottie from '../../components/LoadingLottie';
 
 function Home() {
     i18n.translations = languageData;
 
     if (true) {
         return (
-            <LottieLoading />
+            <LoadingLottie />
         )
     }
 

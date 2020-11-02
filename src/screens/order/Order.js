@@ -9,12 +9,22 @@ import AsyncStorage from '@react-native-community/async-storage';
 import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
 
+//components
+import LoadingSpinner from '../../components/LoadingSpinner';
+
 //i18n
 import { languageData } from '../../i18n/i18n';
 
 function Order() {
     i18n.translations = languageData;
-    
+
+    if (true) {
+        return (
+            <LoadingSpinner />
+        )
+    }
+
+
     return (
         <View style={styles.container}>
             <View style={styles.button}>
