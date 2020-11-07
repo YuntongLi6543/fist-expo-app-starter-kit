@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "react-native-hook-redux-template",
-    "slug": "react-native-hook-redux-template",
+    "name": "fist-expo-app-starter-kit",
+    "slug": "fist-expo-app-starter-kit",
     "privacy": "public",
     "platforms": [
       "ios",
