@@ -11,9 +11,9 @@ import AsyncStorage from '@react-native-community/async-storage';
 import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
 
-import { languageData } from '../../i18n/i18n';
-import LoadingSpinner from '../../components/LoadingSpinner';
-import LoadingLottie from '../../components/LoadingLottie';
+import { languageData } from '../../languages/i18n';
+import LoadingSpinner from '../../components/loading/LoadingSpinner';
+import LoadingLottie from '../../components/loading/LoadingLottie';
 
 function Home() {
     i18n.translations = languageData;

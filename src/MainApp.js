@@ -15,7 +15,7 @@ import i18n from 'i18n-js';
 import { Feather } from '@expo/vector-icons';
 
 //components
-import LoadingLottie from './components/LoadingLottie';
+import LoadingLottie from './components/loading/LoadingLottie';
 
 //screens
 import Home from './screens/home/Home';
@@ -25,7 +25,7 @@ import User from './screens/user/User';
 import StackExample from './screens/home/Stack';
 
 //styles
-import { Colors } from './styles';
+import { Colors } from './configs/StyleConfig';
 
 //disable text and textinput of the user system setting 
 Text.defaultProps = Text.defaultProps || {};

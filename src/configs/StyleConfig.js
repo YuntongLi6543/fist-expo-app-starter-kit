@@ -1,8 +1,10 @@
-export const white = '#FFFFFF';
-export const primary = '#FD0053';
-export const secondary = '#000000';
-export const lightGrey = '#F6F4F5';
-export const midGrey = '#E4E4E4';
-export const darkGrey = '#777777';
-export const lightBlack = '#333333';
-export const black = '#000000';
+export const Colors = {
+    white: '#FFFFFF',
+    primary: '#ff023e',
+    secondary: '#000000',
+    lightGrey: '#F6F4F5',
+    midGrey: '#E4E4E4',
+    darkGrey: '#777777',
+    lightBlack: '#333333',
+    black: '#000000'
+}

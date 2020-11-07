@@ -10,10 +10,10 @@ import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
 
 //components
-import LoadingSpinner from '../../components/LoadingSpinner';
+import LoadingSpinner from '../../components/loading/LoadingSpinner';
 
-//i18n
-import { languageData } from '../../i18n/i18n';
+//languages
+import { languageData } from '../../languages/i18n';
 
 function Order() {
     i18n.translations = languageData;

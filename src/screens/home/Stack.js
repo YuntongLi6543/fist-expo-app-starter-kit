@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-import { getData } from '../../actions/data';
+import { getData } from '../../redux/actions/data';
 import { AppLoading } from 'expo';
 
 function Stack() {

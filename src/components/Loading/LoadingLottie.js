@@ -14,7 +14,7 @@ export default function LoadingLottie() {
                 autoPlay
                 loop
                 style={styles.lottieStyle}
-                source={require('../assets/loading/lottieLoading.json')}
+                source={require('../../assets/loading/lottieLoading.json')}
             />
         </View>
     )
