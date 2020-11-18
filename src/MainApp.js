@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, TextInput } from 'react-native';
 
 //react navigation
-import { useSafeArea } from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -85,7 +85,7 @@ export default function MainApp() {
 
 	const bottomTabs = () => {
 		//put insets
-		const insets = useSafeArea();
+		const insets = useSafeAreaInsets();
 
 		return (
 			<BottomTabs.Navigator

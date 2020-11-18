@@ -7,6 +7,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
+import * as Updates from 'expo-updates'
 
 //languages
 import { languageData } from '../../languages/i18n';
@@ -16,12 +17,12 @@ function User() {
 
     const setToEnglish = async () => {
         await AsyncStorage.setItem('language', 'en');
-        await Restart();
+        await Updates.reloadAsync();
     }
 
     const setToChinese = async () => {
         await AsyncStorage.setItem('language', 'zh');
-        await Restart();
+        await Updates.reloadAsync();
     }
 
     return (
