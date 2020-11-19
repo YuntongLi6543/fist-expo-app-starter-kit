@@ -10,31 +10,37 @@ import { AppLoading } from 'expo';
 import AsyncStorage from '@react-native-community/async-storage';
 import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
+import { Video } from 'expo-av';
 
+//components
 import { languageData } from '../../languages/i18n';
 import LoadingSpinner from '../../components/loading/LoadingSpinner';
 import LoadingLottie from '../../components/loading/LoadingLottie';
 
+//config
+import { screenWidth, screenHeight } from '../../configs/AppConfig';
+
 function Home() {
     i18n.translations = languageData;
 
-    if (true) {
-        return (
-            <LoadingLottie />
-        )
-    }
+    // if (true) {
+    //     return (
+    //         <LoadingLottie />
+    //     )
+    // }
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity style={{ flex: 1 }} onPress={() => console.log('111')}>
-                <View style={styles.button}>
-                    <Text style={styles.buttonText}>
-                        home
-                    </Text>
-                </View>
-            </TouchableOpacity>
-
-            <LoadingSpinner />
+            <Video
+                source={{ uri: 'https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8' }}
+                rate={1.0}
+                volume={1.0}
+                isMuted={false}
+                resizeMode="contain"
+                shouldPlay
+                isLooping
+                style={{ width: screenWidth, height: screenHeight }}
+            />
         </View>
     );
 }
@@ -46,6 +52,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         justifyContent: 'center',
+        backgroundColor: 'yellow'
     },
     button: {
         borderRadius: 8,
