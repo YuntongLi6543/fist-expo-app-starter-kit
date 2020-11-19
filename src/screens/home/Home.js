@@ -12,15 +12,17 @@ import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
 
 import { languageData } from '../../languages/i18n';
-import LoadingSpinner from '../../components/loading/LoadingSpinner';
-import LoadingLottie from '../../components/loading/LoadingLottie';
+
+//components
+import LoadingScreen from '../../components/loading/LoadingScreen';
+
 
 function Home() {
     i18n.translations = languageData;
 
     if (true) {
         return (
-            <LoadingLottie />
+            <LoadingScreen />
         )
     }
 

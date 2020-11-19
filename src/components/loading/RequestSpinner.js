@@ -5,9 +5,9 @@ import { StyleSheet, View, ActivityIndicator } from 'react-native';
 //packages
 import { Overlay } from "react-native-elements";
 
-//等待数据加载或提交时的 loading overlay, 用户无法进行任何操作。
+//等待数据加载或提交时的 request overlay, 用户无法进行任何操作，直到服务器返回闭环消息。
 //样式： ios为菊花，android为圆圈
-export default function LoadingSpinner() {
+export default function RequestSpinner() {
     return (
         <View style={styles.container}>
             <Overlay

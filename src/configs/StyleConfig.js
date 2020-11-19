@@ -1,3 +1,4 @@
+//global colors
 export const Colors = {
     white: '#FFFFFF',
     primary: '#ff023e',

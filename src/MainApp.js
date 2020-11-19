@@ -15,7 +15,6 @@ import i18n from 'i18n-js';
 import { Feather } from '@expo/vector-icons';
 
 //components
-import LoadingLottie from './components/loading/LoadingLottie';
 
 //screens
 import Home from './screens/home/Home';
@@ -185,10 +184,6 @@ export default function MainApp() {
 			</Stack.Navigator>
 		);
 	};
-
-	if (loading === true) {
-		return <LoadingLottie />
-	}
 
 	return (
 		<NavigationContainer>

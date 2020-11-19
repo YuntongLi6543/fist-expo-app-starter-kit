@@ -10,7 +10,7 @@ import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
 
 //components
-import LoadingSpinner from '../../components/loading/LoadingSpinner';
+import RequestSpinner from '../../components/loading/RequestSpinner';
 
 //languages
 import { languageData } from '../../languages/i18n';
@@ -20,7 +20,7 @@ function Order() {
 
     if (true) {
         return (
-            <LoadingSpinner />
+            <RequestSpinner />
         )
     }
 
