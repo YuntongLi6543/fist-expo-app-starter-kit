@@ -6,7 +6,13 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { getData } from '../../redux/actions/data';
 import { AppLoading } from 'expo';
 
+import * as Linking from 'expo-linking';
+
 function Stack() {
+
+    const currentURL = Linking.useUrl();
+
+    console.log(currentURL)
 
     useEffect(() => {
         dispatch(getData())

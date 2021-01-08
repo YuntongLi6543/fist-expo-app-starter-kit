@@ -16,27 +16,37 @@ import { languageData } from '../../languages/i18n';
 //components
 import LoadingScreen from '../../components/loading/LoadingScreen';
 
+import * as Linking from 'expo-linking';
+
 
 function Home() {
     i18n.translations = languageData;
 
-    if (true) {
-        return (
-            <LoadingScreen />
-        )
-    }
+    const navigation = useNavigation()
+
+    // if (true) {
+    //     return (
+    //         <LoadingScreen />
+    //     )
+    // }
+
+    const link = 'exp://192.168.2.39:19000/Stack/345678'
+
+    console.log(Linking.parse('exp://192.168.2.39:19000','Stack'))
+
+    const { queryParams } = Linking.parse(link);
+
+    console.log(queryParams)
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity style={{ flex: 1 }} onPress={() => console.log('111')}>
+            <TouchableOpacity style={{ flex: 1 }} onPress={() => navigation.navigate('Stack')}>
                 <View style={styles.button}>
                     <Text style={styles.buttonText}>
                         home
                     </Text>
                 </View>
             </TouchableOpacity>
-
-            <LoadingSpinner />
         </View>
     );
 }
@@ -48,6 +58,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         justifyContent: 'center',
+        alignItems: 'center'
     },
     button: {
         borderRadius: 8,
