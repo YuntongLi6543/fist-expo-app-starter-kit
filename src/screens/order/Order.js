@@ -24,16 +24,15 @@ function Order() {
         )
     }
 
-
-    return (
-        <View style={styles.container}>
-            <View style={styles.button}>
-                <Text style={styles.buttonText}>
-                    {i18n.t('order')}
-                </Text>
-            </View>
-        </View>
-    );
+    // return (
+    //     <View style={styles.container}>
+    //         <View style={styles.button}>
+    //             <Text style={styles.buttonText}>
+    //                 {i18n.t('order')}
+    //             </Text>
+    //         </View>
+    //     </View>
+    // );
 }
 
 export default Order;

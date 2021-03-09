@@ -12,8 +12,6 @@ function Stack() {
 
     const currentURL = Linking.useUrl();
 
-    console.log(currentURL)
-
     useEffect(() => {
         dispatch(getData())
     }, [dispatch]);

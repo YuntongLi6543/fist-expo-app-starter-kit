@@ -1,78 +1,111 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigation } from '@react-navigation/native';
+import React, { useState } from 'react';
+import {
+    Text,
+    View,
+    Image,
+    SafeAreaView
+} from 'react-native';
 
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import Carousel, { Pagination } from 'react-native-snap-carousel';
 
-import { AppLoading } from 'expo';
+import { screenHeight, screenWidth } from '../../configs/AppConfig'
 
-//packages
-import AsyncStorage from '@react-native-community/async-storage';
-import * as Localization from 'expo-localization';
-import i18n from 'i18n-js';
-
-import { languageData } from '../../languages/i18n';
-
-//components
-import LoadingScreen from '../../components/loading/LoadingScreen';
-
-import * as Linking from 'expo-linking';
-
+const data = [
+    {
+        title: "FOOD",
+        text: "Text 1",
+        img: require('../../assets/img/food1.png')
+    },
+    {
+        title: "Item 2",
+        text: "Text 2",
+        img: require('../../assets/img/food2.png')
+    },
+    {
+        title: "Item 3",
+        text: "Text 3",
+        img: require('../../assets/img/food3.png')
+    },
+    {
+        title: "Item 4",
+        text: "Text 4",
+        img: require('../../assets/img/food4.png')
+    },
+    {
+        title: "Item 5",
+        text: "Text 5",
+        img: require('../../assets/img/food5.png')
+    },
+]
 
 function Home() {
-    i18n.translations = languageData;
+    const [activeIndex, setActiveIndex] = useState(0);
 
-    const navigation = useNavigation()
+    const renderItem = ({ item, index }) => {
+        return (
+            <View
+                key={index}
+                style={{
+                    backgroundColor: 'white',
+                    borderRadius: 5,
+                    height: 300,
+                    shadowColor: "#000",
+                    shadowOffset: {
+                        width: 0,
+                        height: 2,
+                    },
+                    shadowOpacity: 0.23,
+                    shadowRadius: 2.62,
+                    elevation: 4,
+                }}>
+                <Image
+                    style={{
+                        width: '100%',
+                        height: '75%',
+                        borderRadius: 5,
+                    }}
+                    source={item.img}
+                />
 
-    // if (true) {
-    //     return (
-    //         <LoadingScreen />
-    //     )
-    // }
-
-    const link = 'exp://192.168.2.39:19000/Stack/345678'
-
-    console.log(Linking.parse('exp://192.168.2.39:19000','Stack'))
-
-    const { queryParams } = Linking.parse(link);
-
-    console.log(queryParams)
-
-    return (
-        <View style={styles.container}>
-            <TouchableOpacity style={{ flex: 1 }} onPress={() => navigation.navigate('Stack')}>
-                <View style={styles.button}>
-                    <Text style={styles.buttonText}>
-                        home
+                <View style={{ flex: 1, justifyContent: 'center', marginLeft: 20 }}>
+                    <Text style={{ fontSize: 20, fontWeight: 'bold' }}>{item.title}</Text>
+                    <Text
+                        style={{ fontSize: 14, color: 'grey' }}
+                    >
+                        {item.text}
                     </Text>
                 </View>
-            </TouchableOpacity>
-        </View>
+            </View>
+        )
+    }
+
+    return (
+        <SafeAreaView style={{ flex: 1, paddingTop: 50, backgroundColor: 'white' }}>
+            <View style={{ backgroundColor: 'white', justifyContent: 'center' }}>
+                <Carousel
+                    layout={"default"}
+                    inactiveSlideScale={0.90}
+                    data={data}
+                    sliderWidth={screenWidth}
+                    itemWidth={0.8 * screenWidth}
+                    renderItem={renderItem}
+                    activeAnimationType='spring'
+                    slideStyle={{ paddingVertical: 10,justifyContent: 'center' }}
+                    onSnapToItem={(index) => setActiveIndex(index)}
+                />
+
+                <Pagination
+                    dotsLength={data.length}
+                    activeDotIndex={activeIndex}
+                    dotStyle={{
+                        backgroundColor: 'grey'
+                    }}
+                    inactiveDotOpacity={0.4}
+                    inactiveDotScale={0.6}
+                />
+            </View>
+        </SafeAreaView>
     );
 }
 
 export default Home;
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    button: {
-        borderRadius: 8,
-        marginLeft: 25,
-        marginRight: 25,
-        paddingVertical: 14,
-        paddingHorizontal: 10,
-        backgroundColor: '#f01d71',
-    },
-    buttonText: {
-        color: 'white',
-        fontWeight: 'bold',
-        textTransform: 'uppercase',
-        fontSize: 16,
-        textAlign: 'center',
-    }
-});
